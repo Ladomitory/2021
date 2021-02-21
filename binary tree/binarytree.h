@@ -20,9 +20,9 @@ namespace binarytree
 		//Branch(ветка) = 'r'/'l' --r - right, l - left;
 
 		//get methods
-		treenode* getPointer();
 
 		//del methods
+		void delNode();
 
 		//other methods
 		treenode* summtree(treenode* leftroot, treenode* rightroot);

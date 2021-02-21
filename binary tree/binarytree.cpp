@@ -28,6 +28,20 @@ namespace binarytree
 
 
 	//del methodss
+	void treenode::delNode()
+	{
+		if (this->type == 2)
+		{
+			free(this);
+		}
+		else
+		{
+			this->left->delNode();
+			this->right->delNode();
+			free(this);
+		}
+		return;
+	}
 
 	//other methods
 	treenode* treenode::summtree(treenode* leftroot, treenode* rightroot)
@@ -38,6 +52,6 @@ namespace binarytree
 		rightroot->type = 1;
 		newnode.left = leftroot;
 		newnode.right = rightroot;
-		return newnode.getPointer();
+		return &newnode;
 	}
 }
