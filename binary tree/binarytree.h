@@ -7,14 +7,14 @@ namespace binarytree
 {
 	class treenode
 	{
-	private:
+	public:
 		short int type = 0;
 		treenode* left = 0,
 			* right = 0;
 		char value = '\0';
-	public:
 		//set methods
-		void setType(short int type);
+		treenode(void);
+		treenode(short type, treenode* leftroot = 0, treenode* rightroot = 0, char value = '\0');
 		//type = 0/1/2 --0 - root(корень), 1 - node(узел), 2 - leaf(лист);
 		void setNode(char branch, treenode* node);
 		//Branch(ветка) = 'r'/'l' --r - right, l - left;
@@ -25,6 +25,8 @@ namespace binarytree
 		void delNode();
 
 		//other methods
-		treenode* summtree(treenode* leftroot, treenode* rightroot);
+		
 	};
+	//function
+	treenode* summtree(treenode* leftroot, treenode* rightroot);
 }

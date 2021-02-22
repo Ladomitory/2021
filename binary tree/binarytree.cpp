@@ -6,9 +6,18 @@
 namespace binarytree
 {
 	//set methods
-	void treenode::setType(short int type)
+	treenode::treenode (short int type, treenode* leftroot, treenode* rightroot, char value)
 	{
 		treenode::type = type;
+		if (type < 2) //type = 0/1
+		{
+			treenode::left = leftroot;
+			treenode::right = rightroot;
+		}
+		else //type = 2
+		{
+			treenode::value = value;
+		}
 	}
 
 	void treenode::setNode(char branch, treenode* root)
@@ -16,12 +25,13 @@ namespace binarytree
 		root->type = 1;
 		if (branch == 'r')
 		{
-			treenode::right = root;
+			this->right = root;
 		}
 		else //branch == 'l'
 		{
-			treenode::left = root;
+			this->left = root;
 		}
+		return;
 	}
 
 	//get methods
@@ -44,14 +54,13 @@ namespace binarytree
 	}
 
 	//other methods
-	treenode* treenode::summtree(treenode* leftroot, treenode* rightroot)
+
+	//function
+	treenode* summtree(treenode* leftroot, treenode* rightroot)
 	{
-		treenode newnode;
-		newnode.type = 0;
 		leftroot->type = 1;
 		rightroot->type = 1;
-		newnode.left = leftroot;
-		newnode.right = rightroot;
+		treenode newnode(0, leftroot, rightroot, '\0');
 		return &newnode;
-	}
+	};
 }
