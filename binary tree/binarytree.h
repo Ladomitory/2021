@@ -9,8 +9,8 @@ namespace binarytree
 	{
 	private:
 		short int type = 0;
-		treenode* left = NILL,
-			* right = NILL;
+		treenode* left = 0,
+			* right = 0;
 		char value = '\0';
 	public:
 		//set methods
