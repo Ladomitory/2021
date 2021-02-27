@@ -7,6 +7,7 @@
 #include "binarytree.h"
 
 using namespace std;
+//using namespace bt;
 
 int main()
 {

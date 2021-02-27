@@ -3,21 +3,29 @@
 #include "binarytree.h"
 #include <cstdlib> //malloc
 
-namespace binarytree
+namespace bt
 {
 	//set methods
-	treenode::treenode (short int type, treenode* leftroot, treenode* rightroot, char value)
+	treenode::treenode(void)
 	{
-		treenode::type = type;
-		if (type < 2) //type = 0/1
-		{
-			treenode::left = leftroot;
-			treenode::right = rightroot;
-		}
-		else //type = 2
-		{
-			treenode::value = value;
-		}
+
+	}
+	treenode::treenode(short type, char value)
+	{
+		treenode::type = type; //type = 2
+
+		treenode::value = value;
+	}
+	treenode::treenode (short type, treenode* leftroot, treenode* rightroot)
+	{
+		treenode::type = type; //type = 0/1
+		
+		treenode::left = leftroot;
+		treenode::right = rightroot;
+	}
+	treenode::treenode(short type, treenode* leftroot, treenode* rightroot, char value)
+	{
+
 	}
 
 	void treenode::setNode(char branch, treenode* root)
